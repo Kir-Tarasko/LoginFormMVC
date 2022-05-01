@@ -36,7 +36,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 let aboutUserVC = navigationVC.topViewController as! UserInfoViewController }
             
         }
-        
     }
     
     deinit {
@@ -44,7 +43,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed() {
-        if usernameTextField.text != "Kirill" || passwordTextField.text != "12345" {
+        if usernameTextField.text != "Kirill" || passwordTextField.text != "Password" {
             showAlert(title: "Error", message: "Wrong username or password", textfield: passwordTextField)
         }
     }
