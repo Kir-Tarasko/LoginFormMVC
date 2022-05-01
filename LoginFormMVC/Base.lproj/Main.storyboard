@@ -48,7 +48,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvj-pg-6dI"/>
-                                            <segue destination="7Jz-gH-f68" kind="presentation" id="ARt-5U-ozB"/>
+                                            <segue destination="7Jz-gH-f68" kind="presentation" identifier="logIn" id="ARt-5U-ozB"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="p70-Ca-LoM">
@@ -170,7 +170,7 @@
                             <constraint firstItem="A3F-Hy-TgJ" firstAttribute="leading" secondItem="a2n-k0-bUh" secondAttribute="leading" constant="95" id="nmu-Aq-f3i"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="s4u-sI-dkf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.circle.fill" catalog="system" id="s4u-sI-dkf"/>
                     <navigationItem key="navigationItem" title="About me" id="VMG-nC-gAG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuZ-hW-STe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -200,7 +200,7 @@
         <!--User Info View Controller-->
         <scene sceneID="OT3-aC-aSI">
             <objects>
-                <viewController title="User Info View Controller" id="n8z-xe-f4H" customClass="UserInfoViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n8z-xe-f4H" customClass="UserInfoViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZo-IQ-q0y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,11 +243,11 @@
             </objects>
             <point key="canvasLocation" x="3370" y="69"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="XYJ-9q-XaX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3gF-fu-JXV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QY8-Fz-3o8"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.circle.fill" catalog="system" id="QY8-Fz-3o8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="55h-Fp-D3f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -264,6 +264,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
