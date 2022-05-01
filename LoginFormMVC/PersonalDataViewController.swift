@@ -12,6 +12,8 @@ class PersonalDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        title = human.description
         // Do any additional setup after loading the view.
     }
     

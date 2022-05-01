@@ -30,11 +30,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let tabBarController = segue.destination as! UITabBarController
         let viewControllers = tabBarController.viewControllers
         for viewController in viewControllers ?? [] {
-            if let welcomeVC = viewController as? WelcomeViewController {
-                
+            if let welcomeVC = viewController as? WelcomeViewController
+            {
+                welcomeVC.user = fullname
             } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as! UserInfoViewController }
-            
+                let aboutUserVC = navigationVC.topViewController as! UserInfoViewController
+                aboutUserVC.title = fullname
+            }
         }
     }
     
@@ -43,7 +45,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed() {
-        if usernameTextField.text != "Kirill" || passwordTextField.text != "Password" {
+        if usernameTextField.text != someUser.login || passwordTextField.text != someUser.password {
             showAlert(title: "Error", message: "Wrong username or password", textfield: passwordTextField)
         }
     }

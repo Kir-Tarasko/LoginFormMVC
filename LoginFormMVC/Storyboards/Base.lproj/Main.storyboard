@@ -131,20 +131,11 @@
             <objects>
                 <viewController id="cfr-Ap-SOu" customClass="WelcomeViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4OP-AS-n0R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpd-xI-CTh">
-                                <rect key="frame" x="107" y="394" width="200" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="fvo-MM-M5i"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3F-Hy-TgJ">
-                                <rect key="frame" x="95" y="707" width="224" height="31"/>
+                                <rect key="frame" x="130" y="727" width="154" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
@@ -154,24 +145,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="logoutTapped:" destination="cfr-Ap-SOu" eventType="touchUpInside" id="RqV-On-RoB"/>
                                     <segue destination="bFo-i7-Rel" kind="unwind" identifier="backToLogin" unwindAction="unwind:" id="ROL-hN-TDA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6G-ZF-lAL">
+                                <rect key="frame" x="50" y="224" width="314" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a2n-k0-bUh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Cpd-xI-CTh" firstAttribute="centerY" secondItem="4OP-AS-n0R" secondAttribute="centerY" id="1f4-UD-D9q"/>
-                            <constraint firstItem="Cpd-xI-CTh" firstAttribute="top" secondItem="a2n-k0-bUh" secondAttribute="top" constant="394" id="ISO-DM-YCs"/>
-                            <constraint firstItem="A3F-Hy-TgJ" firstAttribute="centerX" secondItem="Cpd-xI-CTh" secondAttribute="centerX" id="Wgc-oE-nMw"/>
+                            <constraint firstItem="a2n-k0-bUh" firstAttribute="trailing" secondItem="A3F-Hy-TgJ" secondAttribute="trailing" constant="130" id="Wtd-I6-EQE"/>
+                            <constraint firstItem="a2n-k0-bUh" firstAttribute="trailing" secondItem="e6G-ZF-lAL" secondAttribute="trailing" constant="50" id="XHf-7S-wSe"/>
                             <constraint firstItem="A3F-Hy-TgJ" firstAttribute="bottom" secondItem="a2n-k0-bUh" secondAttribute="bottom" constant="-55" id="ecN-0g-GL6"/>
-                            <constraint firstItem="Cpd-xI-CTh" firstAttribute="centerX" secondItem="4OP-AS-n0R" secondAttribute="centerX" id="fj4-VO-VVE"/>
-                            <constraint firstItem="A3F-Hy-TgJ" firstAttribute="leading" secondItem="a2n-k0-bUh" secondAttribute="leading" constant="95" id="nmu-Aq-f3i"/>
+                            <constraint firstItem="e6G-ZF-lAL" firstAttribute="centerX" secondItem="4OP-AS-n0R" secondAttribute="centerX" id="eyi-58-Jxi"/>
+                            <constraint firstItem="e6G-ZF-lAL" firstAttribute="leading" secondItem="a2n-k0-bUh" secondAttribute="leading" constant="50" id="mKe-fQ-NqM"/>
+                            <constraint firstItem="e6G-ZF-lAL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a2n-k0-bUh" secondAttribute="leading" id="nPC-Dm-tvp"/>
+                            <constraint firstItem="A3F-Hy-TgJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a2n-k0-bUh" secondAttribute="leading" id="nmu-Aq-f3i"/>
+                            <constraint firstItem="e6G-ZF-lAL" firstAttribute="top" secondItem="a2n-k0-bUh" secondAttribute="top" constant="180" id="o7h-rv-q02"/>
+                            <constraint firstItem="a2n-k0-bUh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e6G-ZF-lAL" secondAttribute="trailing" id="p0s-hk-dLZ"/>
+                            <constraint firstItem="A3F-Hy-TgJ" firstAttribute="leading" secondItem="a2n-k0-bUh" secondAttribute="leading" constant="130" id="yG1-be-eKX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.circle.fill" catalog="system" id="s4u-sI-dkf"/>
                     <navigationItem key="navigationItem" title="About me" id="VMG-nC-gAG"/>
+                    <connections>
+                        <outlet property="lbl" destination="e6G-ZF-lAL" id="CP1-HN-LeI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuZ-hW-STe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bFo-i7-Rel" userLabel="Exit" sceneMemberID="exit"/>
@@ -181,7 +185,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Afo-k2-UdR">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7Jz-gH-f68" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7Jz-gH-f68" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QOP-p8-hca">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -202,11 +206,11 @@
             <objects>
                 <viewController id="n8z-xe-f4H" customClass="UserInfoViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZo-IQ-q0y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzL-GW-ydK">
-                                <rect key="frame" x="163.5" y="405.5" width="87" height="31"/>
+                                <rect key="frame" x="163.5" y="432.5" width="87" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About me"/>
                                 <connections>
@@ -232,7 +236,7 @@
             <objects>
                 <viewController id="HfR-TQ-Tc1" customClass="PersonalDataViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIJ-cy-5aQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="yiR-4F-hUU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -250,7 +254,7 @@
                     <tabBarItem key="tabBarItem" title="User" image="person.circle.fill" catalog="system" id="QY8-Fz-3o8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="55h-Fp-D3f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -266,6 +270,9 @@
     <resources>
         <image name="house.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
