@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="7Jz-gH-f68" kind="presentation" identifier="showAboutMeVC" id="nG5-hc-kMr"/>
+                                            <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvj-pg-6dI"/>
+                                            <segue destination="7Jz-gH-f68" kind="presentation" id="ARt-5U-ozB"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="p70-Ca-LoM">
@@ -74,6 +75,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5rB-79-OxZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNe-Wa-UwJ">
                                                 <rect key="frame" x="184.5" y="0.0" width="149.5" height="25"/>
@@ -95,6 +99,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Dg-sb-cCr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -109,6 +116,11 @@
                             <constraint firstItem="JcY-wK-v4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Q2r-sL-NXp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="ETl-pN-qzb" id="ju9-2G-Xn9"/>
+                        <outlet property="passwordTextField" destination="Fbj-jk-5w9" id="chB-QT-EeY"/>
+                        <outlet property="usernameTextField" destination="hTU-95-HV8" id="Glh-7k-5Cw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +129,7 @@
         <!--About me-->
         <scene sceneID="bJY-8I-gd9">
             <objects>
-                <viewController id="cfr-Ap-SOu" sceneMemberID="viewController">
+                <viewController id="cfr-Ap-SOu" customClass="WelcomeViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4OP-AS-n0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +144,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3F-Hy-TgJ">
-                                <rect key="frame" x="95" y="762" width="224" height="31"/>
+                                <rect key="frame" x="95" y="707" width="224" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
@@ -141,6 +153,10 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="cfr-Ap-SOu" eventType="touchUpInside" id="RqV-On-RoB"/>
+                                    <segue destination="bFo-i7-Rel" kind="unwind" identifier="backToLogin" unwindAction="unwind:" id="ROL-hN-TDA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a2n-k0-bUh"/>
@@ -149,15 +165,16 @@
                             <constraint firstItem="Cpd-xI-CTh" firstAttribute="centerY" secondItem="4OP-AS-n0R" secondAttribute="centerY" id="1f4-UD-D9q"/>
                             <constraint firstItem="Cpd-xI-CTh" firstAttribute="top" secondItem="a2n-k0-bUh" secondAttribute="top" constant="394" id="ISO-DM-YCs"/>
                             <constraint firstItem="A3F-Hy-TgJ" firstAttribute="centerX" secondItem="Cpd-xI-CTh" secondAttribute="centerX" id="Wgc-oE-nMw"/>
+                            <constraint firstItem="A3F-Hy-TgJ" firstAttribute="bottom" secondItem="a2n-k0-bUh" secondAttribute="bottom" constant="-55" id="ecN-0g-GL6"/>
                             <constraint firstItem="Cpd-xI-CTh" firstAttribute="centerX" secondItem="4OP-AS-n0R" secondAttribute="centerX" id="fj4-VO-VVE"/>
                             <constraint firstItem="A3F-Hy-TgJ" firstAttribute="leading" secondItem="a2n-k0-bUh" secondAttribute="leading" constant="95" id="nmu-Aq-f3i"/>
-                            <constraint firstItem="a2n-k0-bUh" firstAttribute="bottom" secondItem="A3F-Hy-TgJ" secondAttribute="bottom" id="pnZ-lz-rnh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="s4u-sI-dkf"/>
                     <navigationItem key="navigationItem" title="About me" id="VMG-nC-gAG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuZ-hW-STe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bFo-i7-Rel" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="811.59420289855075" y="816.96428571428567"/>
         </scene>
@@ -183,7 +200,7 @@
         <!--User Info View Controller-->
         <scene sceneID="OT3-aC-aSI">
             <objects>
-                <viewController title="User Info View Controller" id="n8z-xe-f4H" sceneMemberID="viewController">
+                <viewController title="User Info View Controller" id="n8z-xe-f4H" customClass="UserInfoViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZo-IQ-q0y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="2493" y="69"/>
         </scene>
-        <!--View Controller-->
+        <!--Personal Data View Controller-->
         <scene sceneID="jqJ-L9-9zs">
             <objects>
-                <viewController id="HfR-TQ-Tc1" sceneMemberID="viewController">
+                <viewController id="HfR-TQ-Tc1" customClass="PersonalDataViewController" customModule="LoginFormMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIJ-cy-5aQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBU-oA-slR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3371" y="74"/>
+            <point key="canvasLocation" x="3370" y="69"/>
         </scene>
         <!--Item-->
         <scene sceneID="XYJ-9q-XaX">
