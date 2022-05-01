@@ -45,10 +45,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95C74C82281D626100DDFB66 = {
+		952D5CF7281EAA9300A5BA43 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				952D5CF5281E99A400A5BA43 /* LogInViewController.swift */,
+				952D5CEF281E973500A5BA43 /* WelcomeViewController.swift */,
+				952D5CF1281E974500A5BA43 /* UserInfoViewController.swift */,
+				952D5CF3281E979300A5BA43 /* PersonalDataViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		952D5CF8281EAABD00A5BA43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				952D5CED281E971F00A5BA43 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		952D5CF9281EAADB00A5BA43 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				95C74C8E281D626100DDFB66 /* AppDelegate.swift */,
+				95C74C90281D626100DDFB66 /* SceneDelegate.swift */,
+				95C74C97281D626200DDFB66 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		952D5CFA281EAAF500A5BA43 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				95C74C94281D626100DDFB66 /* Main.storyboard */,
+				95C74C99281D626200DDFB66 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		95C74C82281D626100DDFB66 = {
+			isa = PBXGroup;
+			children = (
 				95C74C8D281D626100DDFB66 /* LoginFormMVC */,
 				95C74C8C281D626100DDFB66 /* Products */,
 			);
@@ -65,15 +102,10 @@
 		95C74C8D281D626100DDFB66 /* LoginFormMVC */ = {
 			isa = PBXGroup;
 			children = (
-				952D5CEF281E973500A5BA43 /* WelcomeViewController.swift */,
-				952D5CF1281E974500A5BA43 /* UserInfoViewController.swift */,
-				952D5CF3281E979300A5BA43 /* PersonalDataViewController.swift */,
-				952D5CED281E971F00A5BA43 /* Model.swift */,
-				95C74C8E281D626100DDFB66 /* AppDelegate.swift */,
-				95C74C90281D626100DDFB66 /* SceneDelegate.swift */,
-				95C74C94281D626100DDFB66 /* Main.storyboard */,
-				95C74C97281D626200DDFB66 /* Assets.xcassets */,
-				95C74C99281D626200DDFB66 /* LaunchScreen.storyboard */,
+				952D5CF7281EAA9300A5BA43 /* ViewControllers */,
+				952D5CF8281EAABD00A5BA43 /* Model */,
+				952D5CF9281EAADB00A5BA43 /* SupportFiles */,
+				952D5CFA281EAAF500A5BA43 /* Storyboards */,
 				95C74C9C281D626200DDFB66 /* Info.plist */,
 			);
 			path = LoginFormMVC;
